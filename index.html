@@ -17,14 +17,28 @@
             $(document).ready(function() {
                 $("input[type=submit]").click(function() {
                     var notes = $.trim($("textarea").val());
+                    var flavor = $("input[name='flavor']:checked").val();
+                    var quantity = $("select").find(":selected").text();
                     if (notes.search(/vegan/i) > -1){
                         alert("Sorry, but our cheesecakes contain dairy! :(");
                     }
                     else {
-                        $("form").remove();
-                        var thankYou = $("<p></p>").text("Thank you! Your order has been placed.")
-                                        .css({"color":"blue", "text-align": "center","font-size":"18px","font-weight":"bold"});
-                        $("div.form").append(thankYou);
+                        if (!flavor){
+                            alert("Please select a flavor!");
+                        }
+                        else{
+                            $("form").remove();
+                            if (!notes){
+                                notes = "none";
+                            }
+                            var thankYou = $("<p></p>").text("Thank you! Your order has been placed.")
+                                            .css({"color":"blue", "text-align": "center","font-size":"24px","font-weight":"bold"});
+                            var orderDetails = $("<p></p>").text("You have ordered " + quantity + " " + flavor + " cheesecake(s).")
+                                            .css({"color":"blue", "text-align": "center","font-size":"24px","font-weight":"bold"});
+                            var specialRequests = $("<p></p>").text("Special requests: " + notes)
+                                            .css({"color":"blue", "text-align": "center","font-size":"24px","font-weight":"bold"});
+                            $("div.form").append(thankYou, orderDetails, specialRequests);
+                        }
                     }
                 });
             });
@@ -54,11 +68,11 @@
                             </select>
                         </td>
                         <td>
-                            <input type="radio" id="plain" name="flavor">
+                            <input type="radio" id="plain" name="flavor" value="plain">
                             <label for="plain" class="plain">Plain</label><br>
-                            <input type="radio" id="cherry" name="flavor">
+                            <input type="radio" id="cherry" name="flavor" value="cherry">
                             <label for="cherry" class="cherry">Cherry</label><br>
-                            <input type="radio" id="chocolate" name="flavor">
+                            <input type="radio" id="chocolate" name="flavor" value="chocolate">
                             <label for="chocolate" class="chocolate">Chocolate</label><br>
                         </td>
                     </tr>
