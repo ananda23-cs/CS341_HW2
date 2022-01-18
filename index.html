@@ -15,22 +15,31 @@
         </script>
         <script>
             $(document).ready(function() {
-                $("input[type=submit]").click(function() {
+                $("form").submit(function() {
+                    //gathers values from the form
                     var notes = $.trim($("textarea").val());
                     var flavor = $("input[name='flavor']:checked").val();
                     var quantity = $("select").find(":selected").text();
+
+                    //check if the user typed up the word vegan anywhere in the text area.
                     if (notes.search(/vegan/i) > -1){
                         alert("Sorry, but our cheesecakes contain dairy! :(");
                     }
                     else {
+                        //users are required to choose a flavor
                         if (!flavor){
                             alert("Please select a flavor!");
                         }
                         else{
+                            /*
+                                removes the form element and replaces it with 
+                                a thank-you text that describes the order details
+                            */
                             $("form").remove();
                             if (!notes){
                                 notes = "none";
                             }
+                            $("div.form").css("padding","55px 40px")
                             var thankYou = $("<p></p>").text("Thank you! Your order has been placed.")
                                             .css({"color":"blue", "text-align": "center","font-size":"24px","font-weight":"bold"});
                             var orderDetails = $("<p></p>").text("You have ordered " + quantity + " " + flavor + " cheesecake(s).")
@@ -45,11 +54,13 @@
         </script>
     </head>
     <body>
+        <!--sets up header of website-->
         <div class="header">
             <h1 id="Title">Cheesecake Order Form</h1>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cheesecake_mit_Beeren.jpg/240px-Cheesecake_mit_Beeren.jpg" 
             alt="New York Cheesecake">
         </div>
+        <!--sets up the form that customizes user options for cheesecake-->
         <div class="form">
             <form>
                 <table>
@@ -58,6 +69,7 @@
                         <th>Topping</th>
                     </tr>
                     <tr>
+                        <!--dropdown selector that chooses the quantity of cheesecakes-->
                         <td class="selector">
                             <select>
                                 <option value="1">1</option>
@@ -67,6 +79,7 @@
                                 <option value="5">5</option>
                             </select>
                         </td>
+                        <!--Radio buttons choose flavor of cheesecakes-->
                         <td>
                             <input type="radio" id="plain" name="flavor" value="plain">
                             <label for="plain" class="plain">Plain</label><br>
@@ -77,6 +90,7 @@
                         </td>
                     </tr>
                 </table>
+                <!--text area set up for any special requests by user-->
                 <section class="feedback">
                     <label for="notes" class="notes">Notes:</label><br>
                     <textarea id="notes" name="notes" rows=5 cols=45 placeholder="Enter any special instructions here."></textarea><br>
@@ -85,8 +99,9 @@
                 </section>
             </form>
         </div>
+        <!--sets up div element that displays the order numbers by month-->
         <div class="pastorder">
-            <h2>Total orders past month</h2>
+            <h2>Orders for <button class="dropbtn">Jan</button></h2>
             <ul>
                 <li class="cherry">11 cherry</li>
                 <li class="chocolate">17 chocolate</li>
