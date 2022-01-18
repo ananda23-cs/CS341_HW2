@@ -1,0 +1,133 @@
+/*
+    Designed by Aashish Anand
+    CS341 HW2
+    Version: 1/15/2022
+ */
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body:not(#Title){
+    font-family: 'Courier New', Courier, monospace;
+}
+.header{
+    background-color: #e2652b;
+    text-align: center;
+    height: 100%;
+    padding: 20px;
+}
+h1{
+    font-size: 4.0em;
+    color: rgb(117, 16, 131);
+    text-align: center;
+    font-family: 'Brush Script MT', 'cursive';
+    margin: 0;
+}
+img{
+    background-color: rgb(216, 155, 58);
+    border: 6px solid rgb(83, 196, 224);
+    border-radius: 50%;
+    width: 360px;
+    height: 360px;
+    box-shadow: 9px 12px 8px rgba(0, 0, 0, 0.8)
+}
+.form{
+    background-color: rgb(169, 187, 67);
+    height: 100%;
+    padding: 20px;
+}
+label {
+    font-size: 17px;
+    font-weight: bolder;
+}
+th {
+    font-size: 1.2em;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type="radio"]{
+    display: block;
+    float: left;
+    margin-left: 2.3em;
+}
+input[type="submit"]{
+    animation: flash 1s infinite;
+    padding: 15px 32px;
+    cursor: pointer;
+    background-color: darksalmon;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 4px 2px;
+    transition: 1.2s;
+}
+@keyframes flash {
+    0% {
+        border: 4px solid black;
+    }
+    25% {
+        border: 4px solid rgb(168, 50, 36);
+    }
+    50%{
+        border: 4px solid rgb(50, 211, 149);
+    }
+    75%{
+        border: 4px solid rgb(89, 44, 116);
+    }
+    100%{
+        border: 4px solid black;
+    }
+}
+input[type="submit"]:hover{
+    background-color:rgb(133, 96, 37);
+    color:rgb(169, 187, 67)
+}
+.feedback{
+    text-align: center;
+    padding-top: 20px;
+}
+.plain {
+    color: rgb(168, 98, 18);
+    font-weight: bolder;
+}
+.cherry {
+    color: rgb(199, 11, 11);
+    font-weight: bolder;
+}
+.chocolate {
+    color: rgb(88, 46, 0);
+    font-weight: bolder;
+}
+.pastorder{
+    background-color: rgb(75, 158, 103);
+    padding: 30px;
+    height: 100%;
+    text-align: center;
+}
+.pastorder > h2 {
+    padding: 2px;
+    font-size: 1.7em;
+    margin: 0;
+}
+.pastorder > ul {
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
+}
+.notes {
+    font-size: 18px;
+}
+select{
+    display: block;
+    border: 4px solid #e264b0;
+    border-radius: 6px;
+    padding: 0.5em 1.5em 0.5em 0.9em;
+    font-family: inherit;
+    font-size: inherit;
+    margin-left: 0.6em;
+}
+textarea {
+    border: 4px solid black;
+}
