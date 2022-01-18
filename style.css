@@ -140,10 +140,49 @@ textarea {
     text-align: left;
     font-size: 18px;
 }
+/*
+    External Citation: https://www.w3schools.com/howto/howto_css_dropdown.asp
+    Date Used: 1/18/2022
+    Reason: Used some of the code to create the dropdown widget for the month.
+ */
+.month-dropdown {
+    position: relative;
+    display: inline-block;
+}
 .dropbtn {
     background-color: inherit;
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
     padding: 2px 6px;
+    border: 2px solid black;
+}
+.month-select {
+    display: none;
+    background-color:aqua;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.6);
+}
+.month-select a {
+    color: black;
+    text-align: justify;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    padding: 7px 4px;
+    cursor: pointer;
+}
+.month-dropdown:hover .dropbtn{
+    background-color:aqua;
+}
+.month-dropdown:hover .month-select{
+    display: block;
+}
+.month-select a:hover{
+    background-color: rgb(153, 149, 149);
 }
