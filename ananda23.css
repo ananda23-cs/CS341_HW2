@@ -160,7 +160,7 @@ textarea {
 }
 .month-select {
     display: none;
-    background-color:aqua;
+    background-color:rgb(109, 177, 255);
     position: absolute;
     width: 150px;
     height: 100px;
@@ -179,11 +179,11 @@ textarea {
     cursor: pointer;
 }
 .month-dropdown:hover .dropbtn{
-    background-color:aqua;
+    background-color:rgb(109, 177, 255);
 }
 .month-dropdown:hover .month-select{
     display: block;
 }
 .month-select a:hover{
-    background-color: rgb(153, 149, 149);
+    background-color: rgb(112, 110, 110);
 }
